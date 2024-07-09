@@ -35,7 +35,7 @@ router.get('/',async (req,res)=>{
 router.get('/:taste',async (req,res)=>{
     try{
         const taste = req.params.taste; // extract the taste from the url parameter
-    if(taste=='spicy' || taste =='sour' || taste =='sweet'){
+       if(taste=='spicy' || taste =='sour' || taste =='sweet'){
         
         const response = await Person.find({taste:taste});
         console.log('response Fatched');
