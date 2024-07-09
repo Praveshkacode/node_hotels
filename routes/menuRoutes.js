@@ -32,12 +32,12 @@ router.get('/',async (req,res)=>{
     }
 })
 
-router.get('/:taste',async (req,res)=>{
+router.get('/:tasteType',async (req,res)=>{
     try{
-        const taste = req.params.taste; // extract the taste from the url parameter
-       if(taste=='spicy' || taste =='sour' || taste =='sweet'){
+        const tasteType = req.params.tasteType; // extract the taste from the url parameter
+       if(tasteType=='spicy' || tasteType =='sour' || tasteType =='sweet'){
         
-        const response = await Person.find({taste:taste});
+        const response = await Menu.find({taste:tasteType});
         console.log('response Fatched');
         res.status(200).json(response);
     }else{
